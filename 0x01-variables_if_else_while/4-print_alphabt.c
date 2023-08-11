@@ -9,8 +9,11 @@
 int main(void)
 {
 	int c;
+
 	char newline;
+
 	int n = 10;
+
 	newline = (char)n;
 
 	for (c = 97; c < 123; c++)
@@ -22,6 +25,7 @@ int main(void)
 			putchar(chr);
 		}
 	}
+
 	putchar(newline);
 	return (0);
 }
