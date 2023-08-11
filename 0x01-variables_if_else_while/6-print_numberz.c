@@ -12,7 +12,7 @@ int main(void)
 
 	for (count = 0; count < 10; count++)
 	{
-		printf("%d", count);
+		putchar(count);
 	}
 	printf("\n");
 	return (0);
