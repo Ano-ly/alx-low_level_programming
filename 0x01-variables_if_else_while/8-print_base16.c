@@ -13,7 +13,7 @@ int main(void)
 	int new = 10;
 	char newline = (char)new;
 
-	for (cn = 0; cn < 10; cn++)
+	for (cn = 48; cn < 58; cn++)
 	{
 		putchar(cn);
 	}
