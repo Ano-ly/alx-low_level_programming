@@ -12,6 +12,7 @@ int main(void)
 
 	int comma = 44;
 	int space = 32;
+	int new = 10;
 
 	for (cnt = 48; cnt < 58; cnt++)
 	{
@@ -22,5 +23,6 @@ int main(void)
 			putchar(space);
 		}
 	}
+	putchar(new);
 	return (0);
 }
