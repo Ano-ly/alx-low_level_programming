@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char string[100] = "and that piece of art is useful\" - \
+	char string[60] = "and that piece of art is useful\" - \
 Dora Korpar, 2015-10-19\n";
 
 	write(2, string, sizeof(string) - 1);
