@@ -10,10 +10,13 @@ int main(void)
 {
 	int count;
 
+	int new = 10;
+	char newline = (char)new;
+
 	for (count = 0; count < 10; count++)
 	{
 		putchar(count);
 	}
-	printf("\n");
+	putchar(newline);
 	return (0);
 }
