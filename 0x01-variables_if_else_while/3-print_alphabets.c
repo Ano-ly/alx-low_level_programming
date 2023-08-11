@@ -10,20 +10,23 @@ int main(void)
 {
 	int c;
 
+	int new = 10;
+	char newline = (char)new;
+
 	for (c = 97; c < 123; c++)
 	{
 		char ch = (char)c;
 
-		printf("%c", ch);
+		putchar(ch);
 	}
 	for (c = 65; c < 91; c++)
 	{
 		char ch = (char)c;
 
-		printf("%c", ch);
+		putchar(ch);
 	}
 
-	printf("\n");
+	putchar(newline);
 	return (0);
 
 }
