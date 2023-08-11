@@ -11,12 +11,11 @@ int main(void)
 	int count;
 
 	int new = 10;
-	char newline = (char)new;
 
-	for (count = 0; count < 10; count++)
+	for (count = 48; count < 58; count++)
 	{
 		putchar(count);
 	}
-	putchar(newline);
+	putchar(new);
 	return (0);
 }
