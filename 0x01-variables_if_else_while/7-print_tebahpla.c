@@ -9,10 +9,11 @@
 int main(void)
 {
 	int c;
+
 	int new = 10;
 	char newline = (char)new;
 
-	for (c = 97; c < 123; c++)
+	for (c = 122; c > 96; c--)
 	{
 		char ch = (char)c;
 
