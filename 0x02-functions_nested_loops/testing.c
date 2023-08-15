@@ -2,6 +2,8 @@
 
 int main(void)
 {
-	print_alphabet_x10();
+	int a = _islower('R') + 32;
+	_putchar (a);
+	_putchar (10);
 	return (0);
 }
