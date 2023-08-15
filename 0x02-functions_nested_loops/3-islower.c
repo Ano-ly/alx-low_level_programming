@@ -11,7 +11,7 @@ int _islower(int c)
 {
 	int asciic = (int)c;
 
-	if ((asciic > 64) || (asciic < 91))
+	if ((asciic > 64) && (asciic < 91))
 	{
 		return (0);
 	}
