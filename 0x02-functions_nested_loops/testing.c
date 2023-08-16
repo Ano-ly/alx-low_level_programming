@@ -1,9 +1,12 @@
 #include "main.h"
 
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int a = _islower('R') + 32;
-	_putchar (a);
-	_putchar (10);
-	return (0);
+    times_table();
+    return (0);
 }
