@@ -34,10 +34,10 @@ void print_times_table(int n)
 					printf(" ");
 				}
 				else if ((p != n) && (multed > 99))
-                                {
-                                        printf(",");
-                                        printf(" ");
-                                }
+				{
+					printf(",");
+					printf(" ");
+				}
 				else if ((p != n) && (multed > 9))
 				{
 					printf(",");
@@ -49,6 +49,5 @@ void print_times_table(int n)
 	}
 	else
 	{
-		printf("\n");
 	}
 }
