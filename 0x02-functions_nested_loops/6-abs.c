@@ -1,25 +1,25 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _abs - prints the absolute value of argument
- * @int: parameter to be passed
+ * @m: parameter to be passed
+ *
  * Description - a short function
  * Return: always 0
 */
 
-int _abs(int)
+int _abs(int m)
 {
-	if (*int < 1)
+	if (m < 1)
 	{
-		int absolute = *int * -1;
+		int absolute = m * -1;
 
-		_putchar(absolute);
-		return (0);
+		return (absolute);
 	}
 	else
 	{
-		_putchar(*int);
-		return (0);
+		return (m);
 	}
 
 }
