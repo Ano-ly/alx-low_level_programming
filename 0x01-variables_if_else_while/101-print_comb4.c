@@ -18,23 +18,23 @@ int main(void)
 
 	for (l = 48; l < 58; l++)
 	{
-		for (m = 48; m < 58; m++)
+	for (m = 48; m < 58; m++)
+	{
+		for (n = 48; n < 58; n++)
 		{
-			for (n = 48; n < 58; n++)
+			if ((l < m) && (m < n))
 			{
-				if ((l < m) && (m < n))
+				putchar(l);
+				putchar(m);
+				putchar(n);
+				if (!(l == 55) || !(m == 56) || !(n == 57))
 				{
-					putchar(l);
-					putchar(m);
-					putchar(n);
-					if (!(l == 55) || !(m == 56) || !(n == 57))
-					{
-						putchar(comma);
-						putchar(space);
-					}
+					putchar(comma);
+					putchar(space);
 				}
 			}
 		}
+	}
 	}
 
 	putchar(new);
