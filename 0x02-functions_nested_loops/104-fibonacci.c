@@ -9,4 +9,5 @@
 int main(void)
 {
 	printf("Fibonacci");
+	return (0);
 }
