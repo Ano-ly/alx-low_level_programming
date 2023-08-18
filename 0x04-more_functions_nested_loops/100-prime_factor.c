@@ -16,11 +16,11 @@ int main(void)
 
 	long int integer = 612852475143;
 
-	for (i = 3; i < integer; i++)
+	for (i = 2; i < integer; i++)
 	{
 		if (integer % i == 0)
 		{
-			for (j = 2; j * j < i; j++)
+			for (j = 2; j < i; j++)
 			{
 				if (i % j == 0)
 				{
