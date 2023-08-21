@@ -21,7 +21,7 @@ void print_rev(char *s)
 	{
 		value = s[i];
 		printf("%c", value);
-		printf("\n");
 	}
+	printf("\n");
 
 }
