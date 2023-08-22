@@ -10,6 +10,8 @@
 
 char *_strcpy(char *dest, char *src)
 {
+	printf("%c", dest[0]);
+	printf("%c", src[0]);
 	printf("yay");
 	return ("7");
 }
