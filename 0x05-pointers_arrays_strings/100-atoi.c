@@ -37,6 +37,8 @@ int get_int(char c)
 		return (8);
 	else if (c == 57)
 		return (9);
+	else
+		return (-1);
 }
 
 /**
