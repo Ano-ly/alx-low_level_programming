@@ -1,36 +1,5 @@
 #include "main.h"
-
-/**
- * _strlen - computes the length of a string
- * @str: string whose length is to be computed
- * Description - computes length of string
- * Return: integer, length of string
-*/
-
-int _strlen(char *str)
-{
-	int i;
-	int lenn;
-
-	i = 0;
-	lenn = 0;
-
-	while (str[i] != 0)
-	{
-		lenn++;
-		i++;
-	}
-	return (lenn);
-}
-
-/**
- * leet - converts string to leet
- * @s: string to be converted
- *
- * Description - letters a,e,o,t,l,A,E,O,T,L are converted to
- * 4,3,0,7,1,4,3,0,7,1 respectively
- * Return: pointer to converted string
-*/
+#include <string.h>
 
 char *leet(char *s)
 {
@@ -41,7 +10,7 @@ char *leet(char *s)
 	int j;
 	int l;
 
-	l = _strlen(s);
+	l = strlen(s);
 	i = 0;
 
 	for (i = 0; i < l; i++)
