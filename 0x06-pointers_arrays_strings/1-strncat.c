@@ -49,7 +49,7 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[dest_l] = src[i];
 		dest_l++;
-		if (i == src_l - 1)
+		if (i == src_l)
 		{
 			break;
 		}
