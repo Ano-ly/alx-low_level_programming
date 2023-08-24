@@ -87,7 +87,7 @@ char *cap_string(char *str)
 			{
 				str[i] -= 32;
 			}
-		cap = 1;
+			cap = 1;
 		}
 	}
 	return (str);
