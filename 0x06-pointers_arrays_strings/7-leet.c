@@ -1,6 +1,13 @@
 #include "main.h"
 #include <string.h>
 
+/**
+ * leet - converts string to leet
+ * @s: string to be converted
+ * Description - converts string
+ * Return: converted string
+*/
+
 char *leet(char *s)
 {
 	int array1[] = {97, 101, 111, 116, 108, 65, 69, 79, 84, 76};

@@ -73,9 +73,9 @@ char *cap_string(char *str)
 
 	for (i = 0; i < l; i++)
 	{
-		if (is_sep(str[i]) || cap == 1)
+		if (is_sep(str[i]) == 1 || cap == 1)
 		{
-			if (is_sep(str[i]) && cap == 1)
+			if (is_sep(str[i]) == 1 && cap == 1)
 			{
 				cap = 0;
 			}

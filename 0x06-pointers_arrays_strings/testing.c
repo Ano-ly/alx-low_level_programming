@@ -8,11 +8,13 @@
  */
 int main(void)
 {
-    char str[]= "Hello Amy";
+    char str[] = "My  love fo you ";
     char *ptr;
 
-
     ptr = cap_string(str);
+    cap_string(str);
+
+
     printf("%s", ptr);
     printf("%s", str);
     return (0);
