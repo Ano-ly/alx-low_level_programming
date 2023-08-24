@@ -54,5 +54,6 @@ char *_strncat(char *dest, char *src, int n)
 			break;
 		}
 	}
+	dest[dest_l + 1] = '\0';
 	return (dest);
 }
