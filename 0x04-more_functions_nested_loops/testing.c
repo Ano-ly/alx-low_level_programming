@@ -10,6 +10,6 @@ int main(void)
 {
     int number;
     scanf("%d", &number);
-    print_number(number);
+    print_triangle(number);
     return (0);
 }
