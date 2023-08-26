@@ -20,14 +20,14 @@ int main(void)
 }
 
 /**
- * second_byte - prints zeroes and hex position of first byte
- * @str: string whose bytes are to be printed in hex
+ * third_byte - prints 10 bytes of char
+ * @str: string whose bytes are to be printed
  * @currline: the number of the current line
- * Description - uses for loop to print bytes in hex
+ * Description - uses for loop to print bytes
  * Return: void
 */
 
-void second_byte(char *str, int currline)
+void third_byte(char *str, int currline)
 {
 	int cursor;
 	int num;
