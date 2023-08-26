@@ -108,6 +108,14 @@ void third_byte(char *str, int currline, int size)
 	}
 }
 
+/**
+ * print_buffer - prints a buffer based on a given format
+ * @b: buffer to be printed
+ * @size: size of buffer
+ * Description - prints buffer using various functions
+ * Return: void
+*/
+
 void print_buffer(char *b, int size)
 {
 	int currline;
