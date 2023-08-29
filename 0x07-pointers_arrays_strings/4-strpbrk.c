@@ -41,7 +41,7 @@ char *_strpbrk(char *s, char *accept)
 	int l2;
 	int determinant;
 
-	p = 0;
+	p = ((void *)0);
 	i = 0;
 	l1 = _strlen(s);
 	l2 = _strlen(accept);

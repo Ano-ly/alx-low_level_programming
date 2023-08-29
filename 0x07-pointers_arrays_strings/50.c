@@ -57,23 +57,16 @@ char *_strstr(char *haystack, char *needle)
 	}
 	loc = i;
 
-	while (i < l1 + 1)
+	while (haystack[i] == needle[j])
 	{
+		i++;
+		j++;
 		printf("inside while loop");
 		printf("i: %d, j: %d", i, j);
 		if (j == l2)
 		{
 
 			found = 1;
-			break;
-		}
-		else if (haystack[i] == needle[j])
-		{
-			printf("i: %d, j: %d", i, j);
-			i++;
-			j++;
-		}
-		else
 			break;
 	}
 	if (found == 1)

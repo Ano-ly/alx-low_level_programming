@@ -37,7 +37,7 @@ char *_strchr(char *s, char c)
 	int i;
 	char *p;
 
-	p = 0;
+	p = ((void *)0);
 	l = _strlen(s);
 
 	for (i = 0; i < l; i++)
