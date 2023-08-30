@@ -30,6 +30,7 @@ void iter(char *s, int n)
 {
 	if (s[n] == '\0')
 	{
+		_putchar(10);
 		return;
 	}
 	else
