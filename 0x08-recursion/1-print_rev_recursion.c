@@ -1,7 +1,8 @@
 #include "main.h"
 
-int _strlen(char *s);
 void _iter(char *s, int n);
+int _strlen_recursion(char *s);
+int _len(char *s, int n);
 
 /**
  * _print_rev_recursion - uses another function that uses recursion to print
@@ -13,7 +14,7 @@ void _iter(char *s, int n);
 
 void _print_rev_recursion(char *s)
 {
-	_iter(s, _strlen(s) - 1);
+	_iter(s, _strlen_recursion(s) - 1);
 }
 
 /**
@@ -38,24 +39,34 @@ void _iter(char *s, int n)
 }
 
 /**
- * _strlen - computes the length of a string
- * @str: string whose length is to be computed
- * Description - computes length of string
- * Return: integer, length of string
+ * _strlen_recursion - uses another function that uses recursion to calculate
+ * and print the length of the string.
+ * @s: string whose length is to be calculated
+ * Definition - calculates the length of a string
+ * Return: length of string
 */
 
-int _strlen(char *str)
+int _strlen_recursion(char *s)
 {
-	int i;
-	int lenn;
+	return (_len(s, 0));
+}
 
-	i = 0;
-	lenn = 0;
+/**
+ * _len - uses recursion to print the length of a string
+ * @s: string whose length is to be printed
+ * @n: the starting point for the index
+ * Definition - uses recursion
+ * Return: length of the string argument
+*/
 
-	while (str[i] != 0)
+int _len(char *s, int n)
+{
+	if (s[n] == '\0')
 	{
-		lenn++;
-		i++;
+	return (0);
 	}
-	return (lenn);
+	else
+	{
+		return (1 + _len(s, n + 1));
+	}
 }
