@@ -2,10 +2,26 @@
 
 int _sqrt(int n, int i);
 
+/**
+ * _sqrt_recursion - computes the natural square root of a number
+ * @n: number whose square root is to be found
+ * Definition - uses another function that uses recursion to find the square
+ * root of a number
+ * Return: the natural square root of n, -1 if n has no natural square root
+*/
+
 int _sqrt_recursion(int n)
 {
 	return (_sqrt(n, 1));
 }
+
+/**
+ * _sqrt - uses recursion to find the square root of a number
+ * @n: number whose square root is to be found
+ * @i: starting value for recursive division
+ * Definition - uses recursion
+ * Return: the square root of the argument
+*/
 
 int _sqrt(int n, int i)
 {
@@ -23,6 +39,6 @@ int _sqrt(int n, int i)
 	}
 	else
 	{
-		return _sqrt(n, i + 1);
+		return (_sqrt(n, i + 1));
 	}
 }
