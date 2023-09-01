@@ -26,6 +26,11 @@ int main(int argc, char *argv[])
 	{
 		printf("%d\n", comp(atoi(argv[1]), 0));
 	}
+	if (atoi(argv[1]) == 0)
+	{
+		printf("0");
+	}
+
 	return (0);
 }
 
