@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 int num(char *str);
 int end(char *str, int i);
@@ -23,7 +22,6 @@ char **strtow(char *str)
 	j = 0;
 	i = 0;
 
-	printf("insidde char");
 	if (str == NULL)
 		return (NULL);
 	for_malloc = num(str);
@@ -43,7 +41,7 @@ char **strtow(char *str)
 				n++;
 				i++;
 			}
-			_p[j] = malloc(sizeof(char) * (n));
+			_p[j] = malloc(sizeof(char) * (n + 1));
 			if (_p[j] == NULL)
 				return (NULL);
 			j++;
