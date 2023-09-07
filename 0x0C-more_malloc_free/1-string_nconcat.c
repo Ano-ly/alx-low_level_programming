@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 unsigned int _strlen(char *str);
 
@@ -27,6 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for_malloc += _strlen(s1) + _strlen(s2) + 1;
 	else
 		for_malloc += _strlen(s1) + n + 1;
+	printf("%d", for_malloc);
 	pp = malloc(sizeof(char) * for_malloc);
 	if (pp == NULL)
 		return (NULL);
