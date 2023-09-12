@@ -56,7 +56,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	bingo->name = _strdup(name);
-	bingo->age = _strdup(age);
+	bingo->age = (age);
 	bingo->owner = _strdup(owner);
 
 	return (bingo);
