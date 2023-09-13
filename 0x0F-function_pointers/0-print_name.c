@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#########include <stdlib.h>
 
 /**
  * print_name - pritns a name, according to the specifications
@@ -12,5 +12,5 @@
 void print_name(char *name, void (*f)(char *))
 {
 	if (name != NULL)
-		f(name);
+		(*f)(name);
 }
