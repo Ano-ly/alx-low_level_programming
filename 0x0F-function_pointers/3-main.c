@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	p = get_op_func(argv[2]);
-	if (p != NULL)
-	{
+	/*if (p != NULL)*/
+
 	a = (*p)(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", a);
-	}
+
 
 	return (0);
 }
