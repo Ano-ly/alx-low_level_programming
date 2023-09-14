@@ -28,7 +28,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 	}
 	if (atoi(argv[1]) <= 28)
 	{
-	bytes = "554889e54883ec30897ddc488975d0837ddc027419488d05830e0000";
+	bytes = "554889e54883ec30897ddc488975d0837ddc027419488d05830e0000\n";
 	digs = atoi(argv[1]) * 2;
 
 	for (i = 0; i < digs; i++)
