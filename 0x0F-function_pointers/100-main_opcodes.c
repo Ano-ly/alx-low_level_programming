@@ -34,7 +34,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 	for (i = 0; i < digs; i++)
 	{
 		printf("%c", bytes[i]);
-		if (i % 2 == 1)
+		if (i % 2 == 1 && i != digs - 1)
 		{
 			printf(" ");
 		}
