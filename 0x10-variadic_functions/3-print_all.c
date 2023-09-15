@@ -41,8 +41,11 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		if (format[i + 1] != '\0' && (type_int == 99 || type_int == 105
-			|| type_int == 102 || type_int == 115))
+		if (format[i + 1] != '\0' && (format[i + 1] == 99 ||
+			format[i + 1] == 105 || format[i + 1] == 102
+			|| format[i + 1] == 115))
+			/*&& (format[i + 1] == 99 || type_int == 105*/
+			/*|| type_int == 102 || type_int == 115))*/
 			printf(", ");
 		i++;
 	}
