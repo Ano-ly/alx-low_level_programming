@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <stdlib.h>
+#include "variadic_functions.h"
 
 /**
  * print_numbers - prints number arguments
@@ -13,8 +13,8 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	va_list num_list;
 	int num;
+	va_list num_list;
 
 	if (n != 0)
 	{
