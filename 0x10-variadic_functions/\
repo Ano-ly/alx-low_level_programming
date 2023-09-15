@@ -37,14 +37,11 @@ void print_all(const char * const format, ...)
 			case 115:
 				obj = va_arg(objects, char *);
 				select(obj);
-				break;
 			default:
 				break;
 		}
-		if (format[i + 1] != '\0' && (type_int == 99 || type_int == 105
-			|| type_int == 102 || type_int == 115))
+		if (format[i + 1] != '\0')
 			printf(", ");
-		i++;
 	}
 	printf("\n");
 }
