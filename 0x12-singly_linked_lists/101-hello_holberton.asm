@@ -13,4 +13,3 @@ main:
 	mov rax, 60
 	xor rdi, rdi
 	syscall
-section .note.GNU-stack
