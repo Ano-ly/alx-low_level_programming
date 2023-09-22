@@ -14,4 +14,3 @@ main:
 	xor rdi, rdi
 	syscall
 
-section .note.GNU-stack
