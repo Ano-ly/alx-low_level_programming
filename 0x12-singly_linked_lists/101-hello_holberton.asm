@@ -9,7 +9,9 @@ main:
 	push rbp
 	mov rdi, printstring
 	call printf
-	add rsp, 8
+	pop rbp
 	mov rax, 60
 	xor rdi, rdi
 	syscall
+
+section .note.GNU-stack
