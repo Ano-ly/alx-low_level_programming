@@ -1,5 +1,5 @@
 section .data
-	printstring db "Hello, Holberton", 10
+	printstring db "Hello, Holberton", 10, 0
 
 section .text
 	global main
