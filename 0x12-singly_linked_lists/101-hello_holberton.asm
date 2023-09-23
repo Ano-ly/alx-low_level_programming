@@ -5,6 +5,8 @@ section .data
 section .text
 	global main
 
+extern printf
+
 main:
 	push rbp
 	mov rdi, printstring
