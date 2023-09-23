@@ -1,9 +1,9 @@
 section .data
 	printstring db "Hello, Holberton", 10, 0
+	extern printf
 
 section .text
 	global main
-	extern printf
 
 main:
 	push rbp
@@ -13,4 +13,6 @@ main:
 	mov rax, 60
 	xor rdi, rdi
 	syscall
+
+section .note.GNU-stack
 
