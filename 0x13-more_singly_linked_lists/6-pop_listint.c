@@ -14,13 +14,17 @@ int pop_listint(listint_t **head)
 {
 	int val;
 	listint_t *new_head;
+	listint_t *hd;
 
-	if (*head == NULL)
+	hd = *head;
+
+	if (hd == NULL)
 		return (0);
-	val = head->n;
-	new_head = head->next;
-	free(head);
-	head = new_head;
+	val = hd->n;
+	new_head = hd->next;
+
+	free(hd);
+	*head = new_head;
 
 	return (val);
 
