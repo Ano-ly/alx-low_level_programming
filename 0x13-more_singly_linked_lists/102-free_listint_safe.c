@@ -33,6 +33,8 @@ size_t free_listint_safe(listint_t **h)
 		count++;
 		iter = next;
 	}
+	free_pointerlist(pointer_head);
+	free(iter);
 	*h = NULL;
 	return (count);
 }
