@@ -16,13 +16,16 @@ void free_listint2(listint_t **head)
 	listint_t *iter;
 	listint_t *store;
 
-	iter = *head;
-
-	while (iter != NULL)
+	if (head != NULL)
 	{
-		store = iter->next;
-		free(iter);
-		iter = store;
+		iter = *head;
+
+		while (iter != NULL)
+		{
+			store = iter->next;
+			free(iter);
+			iter = store;
+		}
+		*head = NULL;
 	}
-	*head = NULL;
 }
