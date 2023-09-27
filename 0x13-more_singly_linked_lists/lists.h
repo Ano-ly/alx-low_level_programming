@@ -18,6 +18,22 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * struct p_node - singly linked list
+ * @p: pointer
+ * @next_node: pointer to next node
+ *
+ * Description - stores pointers to listint_t
+ * or, in other words, adresses of listint_t nodes
+*/
+
+typedef struct p_node
+{
+	listint_t *p;
+	struct p_node *next_node;
+} p_node;
+
+
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -31,7 +47,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 
 listint_t *reverse_listint(listint_t **head);
+
 size_t print_listint_safe(const listint_t *head);
+p_node *add_new_pointer(p_node **pointhead, listint_t *p);
+int find_point(p_node *pointhead, const listint_t *pointer);
+void free_pointerlist(p_node *pointhead);
+
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
 #endif /* LISTS_H */
