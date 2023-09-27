@@ -38,7 +38,7 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	if (find_point(pointer_head, iter) == 1)
 	{
-		printf("-> [%p] %d", (void *)iter, iter->n);
+		printf("-> [%p] %d\n", (void *)iter, iter->n);
 	}
 	free_pointerlist(pointer_head);
 
