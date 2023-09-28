@@ -21,7 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 	p_node *node_address;
 
 	if (head == NULL)
-		exit(98);
+		return (0);
 	iter = head;
 	node_count = 0;
 	pointer_head = NULL;

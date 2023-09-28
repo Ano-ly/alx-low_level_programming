@@ -26,8 +26,7 @@ int main(void)
     print_listint_safe(head2);
     head = NULL;
     node = add_nodeint(&head, 0);
-    node->next = node;
-    add_nodeint(&head, 402);
+    node->next = add_nodeint(&head, 1);
     print_listint_safe(head);
     free_listint_safe(&head2);
     free_listint_safe(&head);
