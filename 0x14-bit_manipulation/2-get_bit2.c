@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * get_bit - gets the value of a bit at a particular index
@@ -12,5 +13,12 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	if (index > 64)
 		return (-1);
-	return ((n & (1 << index)) >> index);
+	if ((n & (1 << index)) != 0)
+	{
+		printf("%lu",(n & (1 << index)));
+		return (1);
+	}
+	else
+		return (0);
+	return (0);
 }
