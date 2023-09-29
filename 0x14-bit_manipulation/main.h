@@ -4,6 +4,7 @@
 unsigned int binary_to_uint(const char *b);
 unsigned int convert_bin(const char *str, int pow, int index,
 unsigned int sum);
+int _putchar(char c);
 int _strlen(const char *str);
 int find_valid_index(const char *str, int index, int len);
 unsigned int find_pow(unsigned int pow, unsigned int base);
