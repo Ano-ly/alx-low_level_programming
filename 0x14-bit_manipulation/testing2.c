@@ -10,8 +10,8 @@ int main(void)
 {
     unsigned long int n;
 
-    n = 2;
-    clear_bit(&n, 1);
+    n = 1024;
+    clear_bit(&n, 10);
     printf("%lu\n", n);
     n = 0;
     clear_bit(&n, 10);
