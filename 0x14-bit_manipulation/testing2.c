@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-#include <limits.h>
 
 /**
  * main - check the code
@@ -11,14 +10,14 @@ int main(void)
 {
     unsigned long int n;
 
-    n = 1024;
-    set_bit(&n, 5);
+    n = 2;
+    clear_bit(&n, 1);
     printf("%lu\n", n);
     n = 0;
-    set_bit(&n, 10);
+    clear_bit(&n, 10);
     printf("%lu\n", n);
-    n = ULONG_MAX;
-    set_bit(&n, 0);
+    n = 98;
+    clear_bit(&n, 1);
     printf("%lu\n", n);
     return (0);
 }
