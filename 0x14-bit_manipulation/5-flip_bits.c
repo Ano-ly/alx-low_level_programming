@@ -1,5 +1,5 @@
 #include "main.h"
-/*#include <stdio.h>*/
+#include <stdio.h>
 
 /**
  * flip_bits - computes how many bits of an unsigned long need
@@ -25,7 +25,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		a = get_bit(n, index);
 		b = get_bit(m, index);
-
+		printf("\n");
 		/*printf("a; %d\n", a);*/
 		/*printf("b; %d\n", b);*/
 		if (a != b)
@@ -51,5 +51,6 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	if (index > 64)
 		return (-1);
+	printf("bit :%lu|", (n & (1 << index)) >> index);
 	return ((n & (1 << index)) >> index);
 }
