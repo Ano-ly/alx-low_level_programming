@@ -18,8 +18,9 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd_open;
-	int fd_write;
+	long int fd_open;
+	long int fd_write;
+	long int fd_close;
 
 	if (filename == NULL)
 		return (-1);
@@ -29,12 +30,37 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
-		fd_write = write(fd_open, text_content, sizeof(text_content));
+		fd_write = write(fd_open, text_content, _strlen(text_content));
 		if (fd_write == -1)
 			return (-1);
 	}
 
-	close(fd_open);
+	fd_close = close(fd_open);
+	if (fd_close == -1)
+		return (-1);
 	return (1);
 
+}
+
+/**
+ * _strlen - computes the length of a string
+ * @str: string whose length is to be computed
+ * Description - computes length of string
+ * Return: integer, length of string
+*/
+
+int _strlen(char *str)
+{
+	int i;
+	int lenn;
+
+	i = 0;
+	lenn = 0;
+
+	while (str[i] != 0)
+	{
+		lenn++;
+		i++;
+	}
+	return (lenn);
 }
