@@ -38,17 +38,17 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	fd_open2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY | O_APPEND,
-	S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH);
 	if (fd_open2 == -1)
 	{
-		dprintf(2, "Error: Can't write to %s", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
 	buffer = malloc(1024);
 
 	fd_read = read(fd_open1, buffer, 1024);
-	printf("fd_read: %ld\n", fd_read);
+	/*printf("fd_read: %ld\n", fd_read);*/
 	if (fd_read == -1)
 	{
 		free(buffer);
@@ -58,15 +58,15 @@ int main(int argc, char *argv[])
 	while (fd_read != 0)
 	{
 		fd_write = write(fd_open2, buffer, fd_read);
-		printf("Justcalled write, fd_write: %ld", fd_write);
+		/*printf("Justcalled write, fd_write: %ld", fd_write);*/
 		if (fd_write == -1)
 		{
 			free(buffer);
-			dprintf(2, "Error: Can't write to %s", argv[2]);
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 		fd_read = read(fd_open1, buffer, 1024);
-		printf("fd_read: %ld\n", fd_read);
+		/*printf("fd_read: %ld\n", fd_read);*/
 		if (fd_read == -1)
 		{
 			free(buffer);
@@ -78,14 +78,14 @@ int main(int argc, char *argv[])
 	if (fd_close == -1)
 	{
 		free(buffer);
-		dprintf(2, "Error: Can't close fd %ld", fd_open1);
+		dprintf(2, "Error: Can't close fd %ld\n", fd_open1);
 		exit (100);
 	}
 	fd_close = close(fd_open2);
 	if (fd_close == -1)
 	{
 		free(buffer);
-		dprintf(2, "Error: Can't close fd %ld", fd_open2);
+		dprintf(2, "Error: Can't close fd %ld\n", fd_open2);
 		exit (100);
 	}
 	free(buffer);
