@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
 	long int fd_open1;
 	long int fd_open2;
 	long int fd_read;
+	long int fd_write;
+	long int fd_close;
 	char *buffer;
 
 	if (argc != 3)
@@ -49,48 +51,28 @@ int main(int argc, char *argv[])
 	buffer = malloc(1024);
 
 	fd_read = read(fd_open1, buffer, 1024);
-	func_supplement(fd_read, fd_open1, fd_open2, argv, buffer);
-	free(buffer);
-	return (0);
-}
-
-/**
- * func_supplement - supplements above function
- * @fd_read: bytes read at first
- * @buffer: buffer to be read into
- * @fd_open2: file descriptor
- * @argx: array of arguments
- * @fd_open1: file descriptor
- * Description - completes previous function
- * Return: void
-*/
-
-void func_supplement(long int fd_read, long int fd_open1, long int fd_open2,
-char *argx[], char *buffer)
-{
-	long int fd_close;
-	long int fd_write;
-
 	if (fd_read == -1)
 	{
 		free(buffer);
-		dprintf(2, "Error: Can't read from file %s\n", argx[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	while (fd_read != 0)
 	{
 		fd_write = write(fd_open2, buffer, fd_read);
+		/*printf("Justcalled write, fd_write: %ld", fd_write);*/
 		if (fd_write == -1)
 		{
 			free(buffer);
-			dprintf(2, "Error: Can't write to %s\n", argx[2]);
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 		fd_read = read(fd_open1, buffer, 1024);
+		/*printf("fd_read: %ld\n", fd_read);*/
 		if (fd_read == -1)
 		{
 			free(buffer);
-			dprintf(2, "Error: Can't read from file %s\n", argx[1]);
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 	}
@@ -99,13 +81,15 @@ char *argx[], char *buffer)
 	{
 		free(buffer);
 		dprintf(2, "Error: Can't close fd %ld\n", fd_open1);
-		exit(100);
+		exit (100);
 	}
 	fd_close = close(fd_open2);
 	if (fd_close == -1)
 	{
 		free(buffer);
 		dprintf(2, "Error: Can't close fd %ld\n", fd_open2);
-		exit(100);
+		exit (100);
 	}
+	free(buffer);
+	return (0);
 }
