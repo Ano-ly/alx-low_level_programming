@@ -1,0 +1,49 @@
+#include "main.h"
+
+/**
+ * _strpbrk - finds first occurence of byte in a string
+ * @s: string to be serached
+ * @accept: string of matching bytes
+ * Definition: uses for and while loop to check for first
+ * occurence of byte in string
+ * Return: pointer to the index of first occurence
+*/
+
+char *_strpbrk(char *s, char *accept)
+{
+	int i;
+	char *p;
+	int j;
+	int l1;
+	int l2;
+	int determinant;
+
+	p = ((void *)0);
+	i = 0;
+	l1 = _strlen(s);
+	l2 = _strlen(accept);
+	determinant = 1;
+
+	while (determinant != 0 && i != l1)
+	{
+		for (j = 0; j < l2; j++)
+		{
+			if (accept[j] == s[i])
+			{
+				determinant = 0;
+				break;
+			}
+			else if (j == l2 - 1)
+			{
+				i++;
+			}
+		}
+
+	}
+	if (determinant == 0)
+	{
+		p = s + i;
+	}
+	return (p);
+}
+
