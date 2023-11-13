@@ -13,22 +13,17 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i;
-	int j;
-	int l1;
-	int l2;
-	int found;
 	char *p;
 	int loc;
 
-	j = 0;
-	p = 0;
-	l1 = _strlen(haystack);
-	l2 = _strlen(needle);
-	found = 0;
+	int j = 0;
+	int l1 = _strlen(haystack);
+	int l2 = _strlen(needle);
+	int found = 0;
 
+	p = 0;
 	for (i = 0; i < l1; i++)
 	{
-		printf("repeted");
 		if (haystack[i] == needle[0])
 			break;
 	}
