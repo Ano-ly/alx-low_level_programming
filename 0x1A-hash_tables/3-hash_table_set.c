@@ -22,7 +22,7 @@ const char *value)
 	if (key == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	printf("Index: %ld", index);
+	/*printf("Index: %ld", index);*/
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
