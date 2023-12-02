@@ -26,6 +26,7 @@ const char *value)
 		return (0);
 	new_node->key = (char *)key;
 	new_node->value = strdup(value);
+	new_node->next = NULL;
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = new_node;
