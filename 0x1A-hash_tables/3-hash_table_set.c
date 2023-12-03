@@ -17,12 +17,24 @@ const char *value)
 {
 	long int index;
 	hash_node_t *new_node;
-	hash_node_t *store_placeholder;
+	hash_node_t *iter;
 
-	if (key == NULL)
+	if (ht == NULL)
+		return (0);
+	if ((key == NULL) || (strcmp(key, "") == 0))
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	/*printf("Index: %ld", index);*/
+	iter = ht->array[index];
+	while (iter != NULL)
+	{
+		if (strcmp(iter->key, key) == 0)
+		{
+			strcpy(iter->value, value);
+			return (1);
+		}
+		iter = iter->next;
+		continue;
+	}
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
@@ -36,9 +48,9 @@ const char *value)
 	}
 	else
 	{
-		store_placeholder = ht->array[index];
+		iter = ht->array[index];
 		ht->array[index] = new_node;
-		new_node->next = store_placeholder;
+		new_node->next = iter;
 		return (1);
 	}
 	return (0);
