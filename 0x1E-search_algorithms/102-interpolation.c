@@ -3,7 +3,7 @@
 
 /**
  * interpolation_search - searches for a value in an array
- * using a binary search algorithm
+ * using an interpolation search algorithm
  * @array: array to be searched in
  * @size: size of array
  * @value: value to be searched for
@@ -22,7 +22,8 @@ int interpolation_search(int *array, size_t size, int value)
 		return (-1);
 	low = 0;
 	high = size - 1;
-	m_o = (int)((low + high) / 2);
+	m_o = (low + (((double)(high - low) / (array[high] - array[low])) *
+	(value - array[low])));
 
 	val = rec(low, high, m_o, array, value);
 	return (val);
@@ -42,43 +43,23 @@ int interpolation_search(int *array, size_t size, int value)
 
 int rec(int low, int high, int m_o, int *array, int value)
 {
-	print_array(low, high, array);
-	m_o = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
-	printf("%d", m_o);
-	if (array[m_o] == value)
+	m_o = (low + (((double)(high - low) / (array[high] - array[low])) *
+	(value - array[low])));
+
+	if (m_o > high)
 	{
-		return (m_o);
-	}
-	if (low >= high)
+		printf("Value checked array[%d] is out of range\n", m_o);
 		return (-1);
+	}
+	printf("Value checked array[%d] = [%d]\n", m_o, array[m_o]);
+	if ((low >= high) || (array[low] == value))
+		return (low);
 	if (array[m_o] < value)
 		return (rec(m_o + 1, high, m_o, array, value));
 	if (array[m_o] > value)
-		return (rec(low, m_o - 1, m_o, array, value));
+		return (rec(low, m_o, m_o, array, value));
+	if (array[m_o] == value)
+		return (m_o);
 	return (-1);
 }
 
-/**
- * print_array - prints an array
- * @low: lower bound index
- * @high: upper bound index
- * @array: array to be printed
- * Description - prints an array
- * Return: void
-*/
-
-void print_array(int low, int high, int *array)
-{
-	int i;
-
-	i = 0;
-
-	printf("Searching in array: ");
-	for (i = low; i < high + 1; i++)
-	{
-		printf("%d", array[i]);
-		if (i != high)
-			printf(", ");
-	}
-	printf("\n");
-}
